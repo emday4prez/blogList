@@ -33,7 +33,7 @@ blogRouter.delete('/:id', async (request, response, next) => {
   response.status(204).end()
 })
 
-blogRouter.put('/:id', (request, response, next) => {
+blogRouter.put('/:id', async (request, response, next) => {
   const body = request.body
 
   const blog = {
@@ -43,11 +43,12 @@ blogRouter.put('/:id', (request, response, next) => {
     likes: body.likes
   }
 
-  Blog.findByIdAndUpdate(request.params.id, blog, {new: true})
-  .then(updatedBlog => {
-    response.json(updatedBlog)
-  })
-  .catch(error => next(error))
+ const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, blog, {new: true})
+  response.status(206).json(updatedBlog) 
+ // .then(updatedBlog => {
+  //   response.json(updatedBlog)
+  // })
+  // .catch(error => next(error))
 
 })
 
