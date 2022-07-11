@@ -1,10 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtZGF5NHByZXoiLCJpZCI6IjYyYmI0ZmE3M2E1YTJlMmM4NzJiZjZhZiIsImlhdCI6MTY1NjQ0MzU4Mn0.sJXBi7vOMkUD8oeiuRQVEJ9vd5eaPTGINlwCx94p-q0
 
 {
- "title": "The Top 10 Greatest Books of All Time",
- "author": "J. Peder Zane",
- "url": "https://thegreatestbooks.org/lists/44",
- "likes": 19
+ "title": "Intro to SQL",
+ "author": "SQLBolt",
+ "url": "sqlbolt.com",
+ "likes": 9
 }
